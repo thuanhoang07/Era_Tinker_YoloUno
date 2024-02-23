@@ -33,7 +33,7 @@ public:
     bool waitResult(const char* cmd, unsigned long time);
     float getHumidity();
     float getTemperature();
-    bool isFlameDetected(); // Changed return type to bool
+    uint16_t isFlameDetected(); // Changed return type to bool
     bool addCommand(int pin, const char* cmd);
     void init(int pinHumidity, int pinTemperature, int pinFlame); // Changed parameter name to pinFlame
     void begin();
