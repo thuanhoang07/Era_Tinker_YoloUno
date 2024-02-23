@@ -56,7 +56,7 @@ float ERaConsole::getTemperature() {
     return this->getValue("T");
 }
 
-bool ERaConsole::isFlameDetected() { // Changed return type to bool
+float ERaConsole::isFlameDetected() { // Changed return type to bool
     return this->getValue("F"); // Changed command to "F"
 }
 
