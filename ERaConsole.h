@@ -63,3 +63,4 @@ private:
 };
 
 #endif /* INC_ERA_CONSOLE_H_ */
+
