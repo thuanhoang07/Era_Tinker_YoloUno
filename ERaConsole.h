@@ -37,7 +37,7 @@ public:
     float getHumidity();
     float getTemperature();
     float getGas(); 
-    uint8_t getFlame(); 
+    float getFlame(); 
 
     bool addCommand(int pin, const char* cmd);
     void init(int pinHumidity, int pinTemperature, int pinGas, int pinFlame);
