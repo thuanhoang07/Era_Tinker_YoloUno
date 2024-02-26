@@ -29,13 +29,18 @@ public:
 
     bool requestHumidity(unsigned long time);
     bool requestTemperature(unsigned long time);
-    bool requestFlame(unsigned long time); // Changed function name to requestFlame
+    bool requestGas(unsigned long time);
+    bool requestFlame(unsigned long time);
+
     bool waitResult(const char* cmd, unsigned long time);
+
     float getHumidity();
     float getTemperature();
-    uint16_t isFlameDetected(); // Changed return type to bool
+    float getGas(); 
+    uint8_t getFlame(); 
+
     bool addCommand(int pin, const char* cmd);
-    void init(int pinHumidity, int pinTemperature, int pinFlame); // Changed parameter name to pinFlame
+    void init(int pinHumidity, int pinTemperature, int pinGas, int pinFlame);
     void begin();
     void run();
     void println();
