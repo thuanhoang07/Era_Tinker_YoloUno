@@ -66,7 +66,7 @@ float ERaConsole::getGas() {
     return this->getValue("S"); 
 }
 
-uint8_t ERaConsole::getFlame() {
+float ERaConsole::getFlame() {
     return this->getValue("F");
 }
 
