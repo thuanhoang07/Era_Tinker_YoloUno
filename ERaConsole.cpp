@@ -25,11 +25,17 @@ bool ERaConsole::requestTemperature(unsigned long time) {
     return this->waitResult("T", time);
 }
 
-bool ERaConsole::requestFlame(unsigned long time) {
-    this->write("F"); // Changed command to "F" for flame detection
-    return this->waitResult("F", time); // Changed expected command to "F"
+bool ERaConsole::requestGas(unsigned long time) {
+    this->write("S");
+    return this->waitResult("S", time);
 }
 
+bool ERaConsole::requestFlame(unsigned long time) {
+    this->write("F");
+    return this->waitResult("F", time);
+}
+
+ 
 bool ERaConsole::waitResult(const char* cmdExpected, unsigned long time) {
     if (cmdExpected == NULL) {
         return false;
@@ -56,11 +62,15 @@ float ERaConsole::getTemperature() {
     return this->getValue("T");
 }
 
-uint16_t ERaConsole::isFlameDetected() { // Changed return type to bool
-    return this->getValue("F"); // Changed command to "F"
+float ERaConsole::getGas() {
+    return this->getValue("S"); 
 }
 
-bool ERaConsole::addCommand(int pin, const char* cmd) {
+uint8_t ERaConsole::getFlame() {
+    return this->getValue("F");
+}
+
+bool ERaConsole::addCommand(int pin, const char* cmd) {S
     if (cmd == NULL) {
         return false;
     }
@@ -73,11 +83,12 @@ bool ERaConsole::addCommand(int pin, const char* cmd) {
     return true;
 }
 
-void ERaConsole::init(int pinHumidity, int pinTemperature, int pinFlame) { // Changed parameter name to pinFlame
+void ERaConsole::init(int pinHumidity, int pinTemperature, int pinGas, int pinFlame) {
     this->begin();
     this->addCommand(pinHumidity, "H");
     this->addCommand(pinTemperature, "T");
-    this->addCommand(pinFlame, "F"); // Changed command to "F" for flame sensor
+    this->addCommand(pinGas, "S");
+    this->addCommand(pinFlame, "F");
 }
 
 void ERaConsole::begin() {
