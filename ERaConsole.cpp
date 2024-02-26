@@ -7,7 +7,7 @@
 ERaConsole::ERaConsole(Stream& st)
     : stream(st)
     , numCommand(0)
-    , timeout(2000UL)
+    , timeout(1000UL)
     , bufferCount(0UL)
     , cmdState(CMD_STATE_BEGIN)
 {}
