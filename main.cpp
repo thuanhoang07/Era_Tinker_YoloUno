@@ -49,8 +49,8 @@ ERA_DISCONNECTED() {
 void timerEvent() {
     console.requestHumidity(100);
     console.requestTemperature(100);
-    console.requestGas(70);
-    console.requestFlame(30);
+    console.requestGas(200);
+    console.requestFlame(200);
     printf("Uptime: %d\r\n", ERaMillis() / 1000L);
 }
 
