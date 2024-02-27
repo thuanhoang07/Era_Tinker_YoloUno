@@ -51,7 +51,7 @@ void timerEvent() {
     console.requestTemperature(100);
     console.requestGas(100);
     console.requestFlame(100);
-    printf("Uptime: %d\r\n", ERaMillis() / 11000L);
+    printf("Uptime: %d\r\n", ERaMillis() / 1000L);
 }
 
 void setup() {
