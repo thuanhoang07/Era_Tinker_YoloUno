@@ -51,7 +51,7 @@ void timerEvent() {
     console.requestTemperature(100);
     console.requestGas(100);
     console.requestFlame(100);
-    printf("Uptime: %d\r\n", ERaMillis() / 1000L);
+    printf("Uptime: %d\r\n", ERaMillis() / 2000L);
 }
 
 void setup() {
@@ -61,7 +61,7 @@ void setup() {
     ERa.setAppLoop(false);
     ERa.setBoardID(boardID);
     ERa.begin(auth, host, port, user, pass);
-    ERa.addInterval(1000L, timerEvent);
+    ERa.addInterval(2000L, timerEvent);
 }
 
 void loop() {
