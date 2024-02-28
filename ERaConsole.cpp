@@ -40,7 +40,6 @@ bool ERaConsole::requestRadar(unsigned long time) {
     return this->waitResult("R", time);
 }
 
- 
 bool ERaConsole::waitResult(const char* cmdExpected, unsigned long time) {
     if (cmdExpected == NULL) {
         return false;
