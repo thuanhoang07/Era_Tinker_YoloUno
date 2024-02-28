@@ -7,7 +7,7 @@
 #include <ERa/ERaParam.hpp>
 #include <Utility/ERaUtility.hpp>
 
-#define ERA_MAX_CMD 32
+#define ERA_MAX_CMD 20
 
 class ERaConsole
 {
