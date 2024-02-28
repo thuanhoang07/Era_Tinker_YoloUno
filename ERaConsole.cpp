@@ -35,6 +35,11 @@ bool ERaConsole::requestFlame(unsigned long time) {
     return this->waitResult("F", time);
 }
 
+bool ERaConsole::requestRadar(unsigned long time) {
+    this->write("R");
+    return this->waitResult("R", time);
+}
+
  
 bool ERaConsole::waitResult(const char* cmdExpected, unsigned long time) {
     if (cmdExpected == NULL) {
@@ -70,7 +75,11 @@ float ERaConsole::getFlame() {
     return this->getValue("F");
 }
 
-bool ERaConsole::addCommand(int pin, const char* cmd) {
+float ERaConsole::getRadar() {
+    return this->getValue("R");
+}
+
+bool ERaConsole::addCommand(int pin, const char* cmd) {S
     if (cmd == NULL) {
         return false;
     }
@@ -83,12 +92,13 @@ bool ERaConsole::addCommand(int pin, const char* cmd) {
     return true;
 }
 
-void ERaConsole::init(int pinHumidity, int pinTemperature, int pinGas, int pinFlame) {
+void ERaConsole::init(int pinHumidity, int pinTemperature, int pinGas, int pinFlame, int pinRadar) {
     this->begin();
     this->addCommand(pinHumidity, "H");
     this->addCommand(pinTemperature, "T");
     this->addCommand(pinGas, "S");
     this->addCommand(pinFlame, "F");
+    this->addCommand(pinRadar, "R");
 }
 
 void ERaConsole::begin() {
