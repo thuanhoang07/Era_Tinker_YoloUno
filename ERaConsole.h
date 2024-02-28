@@ -31,6 +31,7 @@ public:
     bool requestTemperature(unsigned long time);
     bool requestGas(unsigned long time);
     bool requestFlame(unsigned long time);
+    bool requestRadar(unsigned long time);
 
     bool waitResult(const char* cmd, unsigned long time);
 
@@ -38,9 +39,10 @@ public:
     float getTemperature();
     float getGas(); 
     float getFlame(); 
+    float getRadar(); 
 
     bool addCommand(int pin, const char* cmd);
-    void init(int pinHumidity, int pinTemperature, int pinGas, int pinFlame);
+    void init(int pinHumidity, int pinTemperature, int pinGas, int pinFlame, int pinRadar);
     void begin();
     void run();
     void println();
@@ -63,4 +65,3 @@ private:
 };
 
 #endif /* INC_ERA_CONSOLE_H_ */
-
