@@ -79,7 +79,7 @@ float ERaConsole::getRadar() {
     return this->getValue("R");
 }
 
-bool ERaConsole::addCommand(int pin, const char* cmd) {S
+bool ERaConsole::addCommand(int pin, const char* cmd) {
     if (cmd == NULL) {
         return false;
     }
