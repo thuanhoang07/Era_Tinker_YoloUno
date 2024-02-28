@@ -51,12 +51,13 @@ void timerEvent() {
     console.requestTemperature(100);
     console.requestGas(200);
     console.requestFlame(200);
+    console.requestRadar(300);
     printf("Uptime: %d\r\n", ERaMillis() / 1000L);
 }
 
 void setup() {
     serial.begin(devName, devBaud);
-    console.init(V0, V1, V2, V3);
+    console.init(V0, V1, V2, V3, V4);
 
     ERa.setAppLoop(false);
     ERa.setBoardID(boardID);
