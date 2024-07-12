@@ -30,8 +30,9 @@ static const char* user;
 static const char* pass;
 
 static int devBaud = 115200;
+//-----------------------------------------------------find out the usb serial--------------------------------------------
 static const char* devName = "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0";
-
+//---------------------------------------------------------------------------------------------------------------------------
 ERaSerialLinux serial;
 ERaConsole console(serial);
 
